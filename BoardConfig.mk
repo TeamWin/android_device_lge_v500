@@ -1,12 +1,9 @@
+# Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := awifi
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8960
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Architecture
 TARGET_CPU_VARIANT := krait
@@ -17,11 +14,19 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 
 # Kernel
+TARGET_PREBUILT_KERNEL := device/lge/v500/kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=awifi vmalloc=600M
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-TARGET_PREBUILT_KERNEL := device/lge/v500/kernel
+
+# Partitions
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 25165824
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 25165824
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2248146944
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12071206912
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 838860800
+BOARD_FLASH_BLOCK_SIZE             := 131072
 
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
