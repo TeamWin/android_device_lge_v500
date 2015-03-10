@@ -35,7 +35,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE    := 838860800   # 800M
 BOARD_FLASH_BLOCK_SIZE             := 131072      # (BOARD_KERNEL_PAGESIZE * 64)
 
 # USB Mounting
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
