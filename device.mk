@@ -7,8 +7,7 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_KERNEL):kernel \
-	$(LOCAL_PATH)/fstab.awifi:root/fstab.awifi
+        $(LOCAL_KERNEL):kernel
 
 $(call inherit-product, build/target/product/full.mk)
 
